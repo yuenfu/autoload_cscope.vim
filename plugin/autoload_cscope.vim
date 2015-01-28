@@ -174,10 +174,10 @@ endfunc
 " auto toggle the menu
 augroup autoload_cscope
  au!
- au BufEnter *.[chly]  call <SID>Cycle_csdb() | call <SID>Cycle_macros_menus()
- au BufEnter *.cc      call <SID>Cycle_csdb() | call <SID>Cycle_macros_menus()
- au BufUnload *.[chly] call <SID>Unload_csdb() | call <SID>Cycle_macros_menus()
- au BufUnload *.cc     call <SID>Unload_csdb() | call <SID>Cycle_macros_menus()
+ au BufEnter *.[chlySs]  call <SID>Cycle_csdb() | call <SID>Cycle_macros_menus()
+ au BufEnter *.cc,*.cpp,*.[ch]xx,*.hh,*in[cl]     call <SID>Cycle_csdb() | call <SID>Cycle_macros_menus()
+ au BufUnload *.[chlySs] call <SID>Unload_csdb() | call <SID>Cycle_macros_menus()
+ au BufUnload *.cc,*.cpp,*.[ch]xx,*.hh,*in[cl]     call <SID>Unload_csdb() | call <SID>Cycle_macros_menus()
 augroup END
 
 let &cpo = s:save_cpo
